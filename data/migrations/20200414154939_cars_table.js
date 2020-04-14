@@ -6,7 +6,11 @@ exports.up = function (knex) {
       tbl.increments("id");
   
       // an index make searching for a value in a column a LOT faster
-      tbl.string("name", 255).notNullable().unique().index();
+      tbl.string("VIN", 255).notNullable().unique().index();
+      tbl.string("make", 255).notNullable().index();
+      tbl.string("model", 255).notNullable().index();
+      tbl.string("mileage", 255).notNullable().index();
+      tbl.string("title-status", 255).index();
     });
   };
 
